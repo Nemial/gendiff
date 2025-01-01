@@ -52,13 +52,14 @@ pub fn start(format: Format, first_file: &PathBuf, second_file: &PathBuf) {
     println!("{diff}");
 }
 
-fn get_content(file: &PathBuf) -> serde_json::Value {
+fn get_content(file: &PathBuf) -> Value {
     match file.extension() {
         Some(ext) => {
             let file_content: Vec<u8> = std::fs::read(file).unwrap();
 
             match ext.to_str() {
                 Some("json") => serde_json::from_slice(&file_content).unwrap(),
+                Some("yaml" | "yml") => serde_yaml::from_slice(&file_content).unwrap(),
                 _ => panic!("{ext:?}: unsupported extension"),
             }
         }
