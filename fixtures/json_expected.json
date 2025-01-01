@@ -1,0 +1,96 @@
+[
+  {
+    "name": "common",
+    "type": "Object",
+    "oldValue": null,
+    "newValue": null,
+    "children": [
+      {
+        "name": "setting1",
+        "type": "Unchanged",
+        "old_value": null,
+        "new_value": null,
+        "children": []
+      },
+      {
+        "name": "setting2",
+        "type": "Removed",
+        "old_value": "200",
+        "new_value": null,
+        "children": []
+      },
+      {
+        "name": "setting3",
+        "type": "Unchanged",
+        "old_value": null,
+        "new_value": null,
+        "children": []
+      },
+      {
+        "name": "setting6",
+        "type": "Removed",
+        "old_value": {
+          "key": "value"
+        },
+        "new_value": null,
+        "children": []
+      },
+      {
+        "name": "setting4",
+        "type": "Added",
+        "old_value": null,
+        "new_value": "blah blah",
+        "children": []
+      },
+      {
+        "name": "setting5",
+        "type": "Added",
+        "old_value": null,
+        "new_value": {
+          "key5": "value5"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "group1",
+    "type": "Object",
+    "oldValue": null,
+    "newValue": null,
+    "children": [
+      {
+        "name": "baz",
+        "type": "Changed",
+        "old_value": "bas",
+        "new_value": "bars",
+        "children": []
+      },
+      {
+        "name": "foo",
+        "type": "Unchanged",
+        "old_value": null,
+        "new_value": null,
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "group2",
+    "type": "Removed",
+    "oldValue": {
+      "abc": "12345"
+    },
+    "newValue": null,
+    "children": []
+  },
+  {
+    "name": "group3",
+    "type": "Added",
+    "oldValue": null,
+    "newValue": {
+      "fee": "100500"
+    },
+    "children": []
+  }
+]
