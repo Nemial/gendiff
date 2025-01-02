@@ -6,7 +6,7 @@
 
 ### Program to generate diff
 
-### Installation
+## Installation
 
 1. Clone this repository
 2. Install application
