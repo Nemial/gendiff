@@ -8,7 +8,7 @@
       {
         "name": "setting1",
         "type": "Unchanged",
-        "old_value": null,
+        "old_value": "Value 1",
         "new_value": null,
         "children": []
       },
@@ -22,7 +22,7 @@
       {
         "name": "setting3",
         "type": "Unchanged",
-        "old_value": null,
+        "old_value": true,
         "new_value": null,
         "children": []
       },
@@ -69,7 +69,7 @@
       {
         "name": "foo",
         "type": "Unchanged",
-        "old_value": null,
+        "old_value": "bar",
         "new_value": null,
         "children": []
       }

@@ -76,7 +76,7 @@ pub fn build(file_content1: &Value, file_content2: &Value) -> Vec<Node> {
                 ast.push(Node::make(
                     key.to_owned(),
                     NodeType::Unchanged,
-                    None,
+                    Some(file1_value.to_owned()),
                     None,
                     vec![],
                 ));

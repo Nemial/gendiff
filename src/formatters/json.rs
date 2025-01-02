@@ -1,14 +1,7 @@
-use crate::ast::Node;
-use crate::Format;
 use serde_json::{json, Value};
+use crate::ast::Node;
 
-pub fn render(format: Format, ast: Vec<Node>) -> String {
-    match format {
-        Format::Json => render_json(ast),
-    }
-}
-
-fn render_json(ast: Vec<Node>) -> String {
+pub fn render(ast: Vec<Node>) -> String {
     let mut values: Vec<Value> = vec![];
 
     for node in ast {
