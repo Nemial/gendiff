@@ -52,14 +52,20 @@ fn stringify(item: Option<Value>, depth: usize) -> String {
                 let mut result: Vec<String> = vec!["{".to_string()];
 
                 for (key, val) in obj {
-                    result.push(format!("{value_indent}{key}: {val}"));
+                    result.push(format!(
+                        "{value_indent}{key}: {}",
+                        val.as_str().unwrap()
+                    ));
                 }
 
                 result.push(format!("{indent}}}"));
 
                 result.join("\n")
             }
-            _ => value.to_string(),
+            _ => match value.as_str() {
+                Some(raw_val) => raw_val.to_string(),
+                None => value.to_string(),
+            },
         },
         None => String::new(),
     }

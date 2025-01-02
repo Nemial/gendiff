@@ -1,5 +1,5 @@
-use serde_json::{json, Value};
 use crate::ast::Node;
+use serde_json::{json, Value};
 
 pub fn render(ast: Vec<Node>) -> String {
     let mut values: Vec<Value> = vec![];

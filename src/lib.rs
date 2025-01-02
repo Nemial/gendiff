@@ -10,7 +10,8 @@ use std::path::PathBuf;
 #[derive(Copy, Clone, Ord, PartialOrd, Eq, PartialEq, ValueEnum, Debug)]
 pub enum Format {
     Json,
-    Pretty
+    Pretty,
+    Plain,
 }
 
 pub fn start(format: Format, first_file: &PathBuf, second_file: &PathBuf) {
@@ -60,7 +61,7 @@ mod tests {
             gen_diff(Format::Json, &get_content(&file1), &get_content(&file2))
         );
     }
-    
+
     #[test]
     fn check_pretty_format() {
         let file1 = PathBuf::from("fixtures/before.json");
@@ -71,6 +72,32 @@ mod tests {
         assert_eq!(
             expected,
             gen_diff(Format::Pretty, &get_content(&file1), &get_content(&file2))
+        );
+    }
+
+    #[test]
+    fn check_pretty_format_on_yaml() {
+        let file1 = PathBuf::from("fixtures/before.yaml");
+        let file2 = PathBuf::from("fixtures/after.yaml");
+        let expected =
+            String::from_utf8(read(PathBuf::from("fixtures/flat_expected")).unwrap()).unwrap();
+
+        assert_eq!(
+            expected,
+            gen_diff(Format::Pretty, &get_content(&file1), &get_content(&file2))
+        );
+    }
+
+    #[test]
+    fn check_plain_format() {
+        let file1 = PathBuf::from("fixtures/before.json");
+        let file2 = PathBuf::from("fixtures/after.json");
+        let expected =
+            String::from_utf8(read(PathBuf::from("fixtures/plain_expected")).unwrap()).unwrap();
+
+        assert_eq!(
+            expected,
+            gen_diff(Format::Plain, &get_content(&file1), &get_content(&file2))
         );
     }
 }

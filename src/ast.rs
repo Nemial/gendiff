@@ -1,7 +1,7 @@
 use serde::Serialize;
 use serde_json::{Map, Value};
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Serialize, Eq, PartialEq)]
 pub enum NodeType {
     Object,
     Added,
